@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evoke – Create. Inspire. Stand Out.</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+ background:#070B16;
+ color:white;
+ font-family:'Poppins', sans-serif;
+ overflow-x:hidden;
+}
+
+.bg-ball{
+ position:fixed;
+ width:220px;
+ height:220px;
+ border-radius:50%;
+ filter:blur(120px);
+ z-index:-1;
+ animation:float 8s infinite alternate ease-in-out;
+}
+.ball1{background:#00c2ff99; top:5%; left:10%;}
+.ball2{background:#ff00ea99; bottom:10%; right:5%;}
+.ball3{background:#ffe10099; top:40%; right:40%;}
+
+@keyframes float{
+ from{transform:translateY(-20px);}
+ to{transform:translateY(30px);}
+}
+
+nav{
+ position:fixed;
+ width:100%;
+ top:0;
+ padding:20px 80px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ background:#0000007a;
+ backdrop-filter:blur(10px);
+ z-index:1000;
+ border-bottom:2px solid rgba(255,255,255,0.1);
+}
+
+.logo{
+ font-family:'Montserrat';
+ font-weight:900;
+ font-size:40px;
+ color:#00c2ff;
+ cursor:pointer;
+ letter-spacing:2px;
+ transition:0.3s;
+}
+.logo:hover{color:white;transform:scale(1.05);}
+
+nav ul{
+ display:flex;
+ list-style:none;
+ gap:40px;
+}
+nav ul li a{
+ text-decoration:none;
+ color:white;
+ font-weight:600;
+ font-size:17px;
+ cursor:pointer;
+ transition:0.3s;
+}
+nav ul li a:hover{color:#00c2ff;transform:scale(1.1);}
+
+section{min-height:100vh;padding:130px 80px;}
+
+.home{
+ text-align:center;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+}
+.home h1{
+ font-family:'Montserrat';
+ font-size:65px;
+ line-height:70px;
+ color:white;
+}
+.home span{color:#00c2ff;}
+.home p{
+ margin-top:10px;
+ font-size:20px;
+ opacity:0.95;
+ max-width:750px;
+}
+
+.btn{
+ margin-top:25px;
+ padding:14px 30px;
+ border:none;
+ background:linear-gradient(135deg,#00c2ff,#00ffaa);
+ color:#000;
+ font-weight:700;
+ border-radius:40px;
+ cursor:pointer;
+ font-size:17px;
+ transition:0.3s;
+}
+.btn:hover{transform:scale(1.08);background:white;}
+
+h2{
+ font-family:'Montserrat';
+ font-size:45px;
+ color:#00c2ff;
+ letter-spacing:1px;
+}
+
+/* ABOUT */
+img{position: absolute;
+top:120%; left: 70%;}
+.about p{
+ max-width:900px;
+ font-size:18px;
+ margin-top:10px;
+ line-height:1.7;
+}
+
+/* WHY SECTION */
+.why-box{
+ margin-top:25px;
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:25px;
+}
+.reason{
+ background:#0d1429;
+ padding:25px;
+ border-radius:14px;
+ border:2px solid #1f2d4a;
+ transition:.3s;
+ text-align:center;
+}
+.reason:hover{
+ transform:translateY(-8px);
+ border-color:#00ffaa;
+ background:#0d1f38;
+}
+.reason h3{
+ font-family:'Montserrat';
+ color:#00ffaa;
+ margin-bottom:10px;
+}
+.reason p{opacity:.9}
+
+/* SERVICES */
+.service-box{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:25px;
+ margin-top:25px;
+}
+.card{
+ background:#0d1429;
+ padding:25px;
+ border-radius:14px;
+ border:2px solid #1f2d4a;
+ transition:0.3s;
+ text-align:center;
+}
+.card:hover{
+ transform:translateY(-8px);
+ border-color:#00c2ff;
+ background:#0c1b37;
+}
+.card h3{
+ font-family:'Montserrat';
+ color:#00c2ff;
+ margin-bottom:10px;
+}
+.card p{opacity:0.9;}
+
+/* CONTACT */
+.contact-box{
+ margin-top:20px;
+ background:#0d1429;
+ padding:25px;
+ border-radius:12px;
+ border:2px solid #1f2d4a;
+ width:400px;
+}
+
+.contact-box input,
+.contact-box textarea{
+ width:100%;
+ padding:10px;
+ margin-top:10px;
+ border-radius:6px;
+ border:none;
+}
+
+.footer{
+ text-align:center;
+ padding:25px;
+ margin-top:50px;
+ background:black;
+}
+.footer small{opacity:0.7;}
+.made{
+ margin-top:8px;
+ color:#00c2ff;
+ font-size:16px;
+ font-weight:600;
+}
+
+@media(max-width:900px){
+ nav{padding:18px 30px;}
+ section{padding:130px 30px;}
+ .home h1{font-size:45px;}
+ .service-box,.why-box{grid-template-columns:1fr;}
+ .contact-box{width:100%;}
+}
+</style>
+
+<script>
+function goTo(section){
+ document.getElementById(section).scrollIntoView({behavior:"smooth"});
+}
+</script>
+</head>
+
+<body>
+
+<div class="bg-ball ball1"></div>
+<div class="bg-ball ball2"></div>
+<div class="bg-ball ball3"></div>
+
+<nav>
+ <div class="logo" onclick="goTo('home')">Evoke</div>
+ <ul>
+  <li><a onclick="goTo('home')">Home</a></li>
+  <li><a onclick="goTo('about')">About</a></li>
+  <li><a onclick="goTo('services')">Purpose</a></li>
+  <li><a onclick="goTo('contact')">Contact</a></li>
+ </ul>
+</nav>
+
+<section class="home" id="home">
+ <h1>Create.<span> Inspire.</span> Evoke.</h1>
+ <p>
+ Evoke is a bold creativity hub built to spark imagination, confidence, and design thinking.
+ It shows how ideas can turn into experiences through color, motion, and strong design.
+ </p>
+ <button class="btn" onclick="goTo('about')">What Is Evoke?</button>
+
+ <div class="made">✨ Made by <b>Samarth</b>, Class 8th</div>
+</section>
+
+<section class="about" id="about">
+<img src="abstract-shape-3d-glass-object.png" height="300px">
+ <h2>What is Evoke?</h2>
+ <p>
+ Evoke isn't just a website — it's a space built to inspire creativity, confidence, and bold thinking.
+ It represents how design, imagination, and presentation can turn a simple idea into something powerful.
+ <br><br>
+ The purpose of Evoke is to:
+ <br><p>• Motivate students to think creatively</p>  
+ <p>• Show how modern design communicates emotions</p>  
+ <p>• Demonstrate confidence, structure, and professionalism</p>  
+ <p>• Encourage learning and curiosity</p>
+ </p>
+</section>
+
+<section id="services">
+ <h2>Why Evoke Exists</h2>
+
+ <div class="why-box">
+  <div class="reason">
+   <h3>To Inspire</h3>
+   <p>Encouraging creativity, imagination, and bold thinking for young minds.</p>
+  </div>
+  <div class="reason">
+   <h3>To Showcase</h3>
+   <p>Demonstrating modern design, confidence, and digital skills proudly.</p>
+  </div>
+  <div class="reason">
+   <h3>To Motivate</h3>
+   <p>Proving that age doesn’t limit creativity — passion and effort do.</p>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <h2>Contact Us 👋</h2>
+
+ <div class="contact-box">
+  <input type="text" placeholder="Your Name">
+  <input type="email" placeholder="Your Email">
+  <textarea rows="4" placeholder="Your Message"></textarea>
+  <button class="btn">Send</button>
+ </div>
+</section>
+
+<div class="footer">
+ <small>© 2026 Evoke. All Rights Reserved.</small>
+ <div class="made">Designed proudly by <b>Samarth – Class 8th</b></div>
+</div>
+
+</body>
+</html>
